@@ -1,0 +1,21 @@
+apiVersion: skaffold/v1beta11
+kind: Config
+build:
+  artifacts:
+  - image: gcr.io/terashim-skaffold-examples/php-profile-filesync
+    context: php
+deploy:
+  kubectl:
+    manifests:
+      - k8s/*
+profiles:
+  - name: dev-filesync
+    build:
+      artifacts:
+      - image: gcr.io/terashim-skaffold-examples/php-profile-filesync
+        context: php
+        sync:
+          manual:
+          - src: 'src/**/*.php'
+            dest: /var/www/html/
+            strip: src/
