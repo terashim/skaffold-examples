@@ -8,3 +8,4 @@ Skafffold の利用例
 ## 参考
 
 * 公式ドキュメント: [Skaffold](https://skaffold.dev/)
+* 公式サンプル集: [skaffold/examples at master · GoogleContainerTools/skaffold](https://github.com/GoogleContainerTools/skaffold/tree/master/examples)
